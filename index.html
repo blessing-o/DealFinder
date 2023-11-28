@@ -15,7 +15,11 @@
 </head>
 
 <body>
-    <!--made this a section to center it in the page.-->
+    <!-- top banner of the page-->
+    <div class="banner bg-warning">
+        <h1 class="display-4 align-items-center"> Deal Finder </h1>
+    </div>
+    <!--Searchbar, checkboxes and search button-->
     <section class="d-flex align-items-center vh-100">
         <div class="container">
             <div class="row justify-content-center">
@@ -37,8 +41,27 @@
                             </li>
                         </ul>
 
+                        <!-- Bootstrap Modal -->
+                        <div class="modal fade" id="selectedRetailersModal" tabindex="-1"
+                            aria-labelledby="selectedRetailersModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="selectedRetailersModalLabel">Selected Retailers</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" id="selectedRetailersBody">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="button" class="btn btn-success submit-btn"
-                            onclick="submitSelection()">Submit</button>
+                            onclick="submitSelection()">Search</button>
                     </form>
                 </div>
             </div>
