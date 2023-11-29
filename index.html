@@ -25,7 +25,17 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form id="retailerForm">
-                        <input type="text" class="form-control search-input" placeholder="What are you looking for?">
+                        
+                        <select id="format-input" class="form-input w-100">
+                            <option value="" disabled selected>Select a product</option>
+                            <option value="TV">TV's</option>
+                            <option value="monitors">Monitors</option>
+                            <option value="headphones">Head Phones</option>
+                            <option value="pc">Personal Computers</option>
+                            <option value="speakers">Speakers</option>
+                          </select>
+
+
                         <ul class="retailer-list">
                             <li class="retailer-item">
                                 <input type="checkbox" class="retailer-checkbox" id="bestBuy" value="bestBuy">
