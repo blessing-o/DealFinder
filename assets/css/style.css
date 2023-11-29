@@ -24,3 +24,20 @@
     padding: 10px;
     text-align: center;
   }
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Content Styles */
+  .content {
+    margin: 20px;
+  }
+
+  /* Style for the "No Items Found" message */
+  .no-items-message {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+  }
