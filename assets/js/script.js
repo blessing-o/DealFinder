@@ -34,11 +34,13 @@ let redirectUrl = "./results.html";
           // Show the modal
           const modal = new bootstrap.Modal(document.getElementById('selectedRetailersModal'));
           modal.show();
+          return;
+
         }else{
 
           //stores an object of the user's search in objectToStore
           let objectToStore = {
-            searchValue: inputEl.value,
+            searchValue: dropdownEl.value,
             optionsChecked: selectedRetailers,
           };
 
