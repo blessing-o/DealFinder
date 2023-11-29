@@ -25,7 +25,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form id="retailerForm">
-                        <input type="text" class="form-control search-input" placeholder="What are you looking for?">
+                        <!-- Blessing: added id = search bar -->
+                        <input type="text" class="form-control search-input" id="search-bar" placeholder="What are you looking for?">
                         <ul class="retailer-list">
                             <li class="retailer-item">
                                 <input type="checkbox" class="retailer-checkbox" id="bestBuy" value="bestBuy">
@@ -60,7 +61,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-success submit-btn"
+                        <!--Blessing: added id for the search button -->
+                        <button type="button" class="btn btn-success submit-btn" id="search-button"
                             onclick="submitSelection()">Search</button>
                     </form>
                 </div>
@@ -74,6 +76,8 @@
     <!--added bootstrap JS and popper.js scripts -->
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <!-- added a link for jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 </body>
 
