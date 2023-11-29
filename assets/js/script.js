@@ -1,4 +1,4 @@
-let searchButtonEl = document.querySelector("#search-button");
+let searchButtonEl = document.querySelector("#submit");
 let dropdownEl = document.querySelector("#dropdown-bar");
 let redirectUrl = "./results.html";
 
@@ -15,13 +15,7 @@ let redirectUrl = "./results.html";
     // BLESSING, please use this to implement the selected options 
     function submitSelection() {
 
-      //TODO: event.preventDefault() is not working and I cannot figure out why --> PHIL: I attempted a fix please advise
-      let retailerForm = document.querySelector("#retailerForm");
 
-      retailerForm.addEventListener('submit', function (event) {
-          event.preventDefault();
-          submitSelection();
-      });
         const checkboxes = document.querySelectorAll('.retailer-checkbox:checked');
         const selectedRetailers = Array.from(checkboxes).map(checkbox => checkbox.value);
 
@@ -34,11 +28,24 @@ let redirectUrl = "./results.html";
           // Show the modal
           const modal = new bootstrap.Modal(document.getElementById('selectedRetailersModal'));
           modal.show();
-        }else{
+          return;
+
+          
+
+        }
+        
+        if(!dropdownEl.value){
+            modalBody.innerHTML = '<p> No product type selected</p>';
+            const modal = new bootstrap.Modal(document.getElementById('selectedRetailersModal'));
+            modal.show();
+            return;
+        }
+
+        else{
 
           //stores an object of the user's search in objectToStore
           let objectToStore = {
-            searchValue: inputEl.value,
+            searchValue: dropdownEl.value,
             optionsChecked: selectedRetailers,
           };
 
@@ -60,5 +67,5 @@ let redirectUrl = "./results.html";
          redirectPage(dropdownEl.value);
   }
 
-   //searchButtonEl.addEventListener('click', redirectPage);
+   searchButtonEl.addEventListener('click', submitSelection);
 
