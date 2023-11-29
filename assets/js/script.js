@@ -1,16 +1,13 @@
-    
-    let searchButtonEl = document.querySelector("#search-button");
-    let inputEl = document.querySelector("#search-bar") 
-
-    let redirectUrl="./results.html";
+let searchButtonEl = document.querySelector("#search-button");
+let dropdownEl = document.querySelector("#dropdown-bar");
+let redirectUrl = "./results.html";
 
     /**
-     * This function redirects the current page to
-     * the results.html page
+     * This function redirects the current page to the results page with selected item as query parameters
      */
-    let redirectPage = function(){
-      console.log(inputEl.value);
-      document.location.href = redirectUrl;
+    let redirectPage = function (itemType) {
+        let url = `${redirectUrl}?itemType=${encodeURIComponent(itemType)}`;
+        document.location.href = url;
     }
 
     
@@ -18,8 +15,13 @@
     // BLESSING, please use this to implement the selected options 
     function submitSelection() {
 
-      //TODO: event.preventDefault() is not working and I cannot figure out why
-      // event.preventDefault();
+      //TODO: event.preventDefault() is not working and I cannot figure out why --> PHIL: I attempted a fix please advise
+      let retailerForm = document.querySelector("#retailerForm");
+
+      retailerForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          submitSelection();
+      });
         const checkboxes = document.querySelectorAll('.retailer-checkbox:checked');
         const selectedRetailers = Array.from(checkboxes).map(checkbox => checkbox.value);
 
@@ -55,8 +57,8 @@
         }
         }
 
-         redirectPage();
+         redirectPage(dropdownEl.value);
   }
 
-  // searchButtonEl.addEventListener('click', redirectPage);
+   //searchButtonEl.addEventListener('click', redirectPage);
 
