@@ -11,7 +11,16 @@ function updateCard(product) {
     document.getElementById('product-image').src = product.image;
 }
 
-// 
+// Function to get URL parameter by name
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Retrieve the selected item type from the URL
+const itemType = getUrlParameter('itemType');
+
+// Fetch from the apis. This is only one. 
 fetch('https://api.example.com/products/product-id') // REPLACE THIS WITH THE URL
     .then(response => response.json())
     .then(data => updateCard(data))
@@ -29,7 +38,7 @@ function displayProducts(products) {
         const card = document.createElement('div');
         card.className = 'col-md-4';
 
-        // Example card structure
+        // Card structure
         card.innerHTML = `
                     <div class="card" onclick="redirectToRetailer('${product.retailerUrl}', '${product.productId}')">
                         <img src="${product.imageUrl}" alt="Product Image">
@@ -45,5 +54,5 @@ function displayProducts(products) {
     });
 }
 
-// Example: Fetch and display products when the page loads
+// Fetch and display products when the page loads
 window.onload = fetchAndDisplayProducts;
