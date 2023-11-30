@@ -54,7 +54,10 @@ let redirectUrl = "./results.html";
           //search stored in objectToStore
           if (typeof(Storage) !== "undefined") {
             let numberOfItems = localStorage.length;
-            localStorage.setItem(numberOfItems,JSON.stringify(objectToStore));
+            // localStorage.setItem(numberOfItems,JSON.stringify(objectToStore));
+             localStorage.setItem(dropdownEl.value,JSON.stringify(objectToStore));
+
+            
 
           }
           else{
@@ -64,7 +67,14 @@ let redirectUrl = "./results.html";
         }
         }
 
-         redirectPage(dropdownEl.value);
+        // let event1 = new Event('getDropdownValue');
+        // var customEvent = new CustomEvent('getDropdownValue', { dropdownEl.value });
+        // document.dispatchEvent(event1);
+        let filterVal = dropdownEl.value;
+        var queryString = './results.html?format=' + filterVal;
+        location.assign(queryString);
+
+        //  redirectPage(dropdownEl.value);
   }
 
    searchButtonEl.addEventListener('click', submitSelection);
