@@ -14,7 +14,8 @@ function updateCard(product, filter) {
   console.log(products);
 
   if (filter === "GoodDeal") {
-    displayProductsFakeStore(products);
+    displayProductsFakeStore(products)
+    ;
   } else if (filter === "Platzi") {
     displayProductsPlatzi(products);
   }
@@ -26,7 +27,7 @@ function updateCard(product, filter) {
  */
 let getFilter = function () {
   let filter = document.location.search.split("=").pop();
-  console.log(document.location.search);
+  // console.log(document.location.search);
   console.log(filter);
 
   if (filter === "Platzi") {
@@ -39,13 +40,14 @@ let getFilter = function () {
     return;
   }
 
-  if (filter === "GoodDeals") {
+  else if (filter === "GoodDeal") {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => updateCard(data, filter))
       .catch((error) =>
         console.error("Error fetching product details:", error)
       );
+      console.log("this ran")
     return;
   }
 };
@@ -61,8 +63,10 @@ function displayProductsFakeStore(products) {
 
   // Loop through each product and create a card
   products.forEach((product) => {
+    console.log("that ran")
     const card = document.createElement("div");
-    card.className = "col-md-4";
+    card.className = "col-md-3";
+    
 
     // Card structure
 
@@ -96,8 +100,9 @@ function displayProductsPlatzi(products) {
 
   // Loop through each product and create a card
   products.forEach((product) => {
+    
     const card = document.createElement("div");
-    card.className = "col-md-4";
+    card.className = "col-md-3";
 
     // Card structure
 
