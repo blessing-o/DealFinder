@@ -16,45 +16,9 @@
       <h1 class="heading">Deal Finder</h1>
       <a href="./index.html" class="back-button text-dark">&larr; Go back.</a>
     </div>
-    <!-- Add sorting buttons -->
-    <div class="dropdown">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="sortDropdown"
-        data-bs-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Sort Options
-      </button>
-      <div class="dropdown-menu" aria-labelledby="sortDropdown">
-        <a class="dropdown-item" href="#" onclick="sortResults('alphabetical')"
-          >Sort A-Z</a
-        >
-        <a
-          class="dropdown-item"
-          href="#"
-          onclick="sortResults('reverse-alphabetical')"
-          >Sort Z-A</a
-        >
-        <a
-          class="dropdown-item"
-          href="#"
-          onclick="sortResults('price-ascending')"
-          >Sort by Price (Ascending)</a
-        >
-        <a
-          class="dropdown-item"
-          href="#"
-          onclick="sortResults('price-descending')"
-          >Sort by Price (Descending)</a
-        >
-      </div>
-    </div>
-    <div class="results content">
+       <div class="results content">
       <h2>Showing results for: <span id="result-text"></span></h2>
-      <div id="result-content" class="no-items-message">
+      <div id="result-content" class="no-items-message row">
         <!-- Results or "No Items Found" message will be displayed here,
             make an if statement for no items found in js -->
       </div>
