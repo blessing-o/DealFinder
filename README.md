@@ -8,12 +8,14 @@ On the main page, users use a dropdown menu to select which retailer they would 
 
 
 Usage:
- ******include link to deployed GitHub page***********************
+https://blessing-o.github.io/DealFinder/
 
 
 Credits:
 
-*************enter here************************
+Phillip Nguyen
+Blessing Okeme
+Michael Girgis
 
 
 License:
