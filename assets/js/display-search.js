@@ -13,9 +13,9 @@ function updateCard(product, filter) {
 
   console.log(products);
 
-  if (filter == "GoodDeal") {
+  if (filter === "GoodDeal") {
     displayProductsFakeStore(products);
-  } else {
+  } else if (filter === "Platzi") {
     displayProductsPlatzi(products);
   }
 }
@@ -29,22 +29,24 @@ let getFilter = function () {
   console.log(document.location.search);
   console.log(filter);
 
-  if (filter == "Platzi") {
+  if (filter === "Platzi") {
     fetch("https://api.escuelajs.co/api/v1/products/")
       .then((response) => response.json())
-      .then((data) => updateCard(data))
+      .then((data) => updateCard(data, filter))
       .catch((error) =>
         console.error("Error fetching product details:", error)
       );
+    return;
   }
 
-  if (filter == "GoodDeal") {
+  if (filter === "GoodDeals") {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => updateCard(data, filter))
       .catch((error) =>
         console.error("Error fetching product details:", error)
       );
+    return;
   }
 };
 
@@ -63,7 +65,7 @@ function displayProductsFakeStore(products) {
     card.className = "col-md-4";
 
     // Card structure
-    // <div class="card" onclick="redirectToRetailer('${product.retailerUrl}', '${product.productId}')"></div>
+
     card.innerHTML = `
                     <div class="card">
 
@@ -72,14 +74,15 @@ function displayProductsFakeStore(products) {
                             <h5 class="card-title">${product.title}</h5>
                             <p class="card-text">${product.description}</p>
                             <p class="card-text">Price: $ ${product.price.toFixed(
-                              2
-                            )}</p>
+      2
+    )}</p>
                         </div>
                     </div>
                 `;
 
     resultContent.appendChild(card);
   });
+  return;
 }
 
 /**
@@ -97,23 +100,24 @@ function displayProductsPlatzi(products) {
     card.className = "col-md-4";
 
     // Card structure
-    // <div class="card" onclick="redirectToRetailer('${product.retailerUrl}', '${product.productId}')"></div>
+
     card.innerHTML = `
                     <div class="card">
 
-                        <img src="${product.images}" alt="Product Image">
+                        <img src="${product.category.image}" alt="Product Image">
                         <div class="card-body">
                             <h5 class="card-title">${product.title}</h5>
                             <p class="card-text">${product.description}</p>
                             <p class="card-text">Price: $ ${product.price.toFixed(
-                              2
-                            )}</p>
+      2
+    )}</p>
                         </div>
                     </div>
                 `;
 
     resultContent.appendChild(card);
   });
+  return;
 }
 
 getFilter();
