@@ -13,9 +13,9 @@ https://blessing-o.github.io/DealFinder/
 
 Credits:
 
-Phillip Nguyen
-Blessing Okeme
-Michael Girgis
+Phillip Nguyen https://github.com/pnguyen412
+Blessing Okeme https://github.com/blessing-o
+Michael Girgis https://github.com/Mike5719
 
 
 License:
