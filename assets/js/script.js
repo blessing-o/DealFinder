@@ -40,7 +40,7 @@ function submitSelection() {
   storeLocalStorage();
 
   let filterVal = dropdownEl.value;
-  var queryString = "./results.html?format=" + filterVal;
+  let queryString = "./results.html?format=" + filterVal;
   location.assign(queryString);
 
   redirectPage(dropdownEl.value);
