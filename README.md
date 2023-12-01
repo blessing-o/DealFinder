@@ -14,9 +14,12 @@ https://blessing-o.github.io/DealFinder/
 
 Credits:
 
-Phillip Nguyen https://github.com/pnguyen412
-Blessing Okeme https://github.com/blessing-o
-Michael Girgis https://github.com/Mike5719
+Platzi Fake Store API: https://fakeapi.platzi.com/
+Fake Store API: https://fakestoreapi.com/
+
+Phillip Nguyen: https://github.com/pnguyen412
+Blessing Okeme: https://github.com/blessing-o
+Michael Girgis: https://github.com/Mike5719
 
 
 License:
